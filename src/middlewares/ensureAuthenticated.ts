@@ -12,7 +12,7 @@ export async function ensureAutheticated(
     request: Request,
     response: Response,
     next: NextFunction
-) {
+): Promise<void> {
     const authHeader = request.headers.authorization;
 
     if (!authHeader) {
@@ -34,6 +34,10 @@ export async function ensureAutheticated(
         if (!user) {
             throw new AppError("User dos not exist!", 401);
         }
+
+        request.user = {
+            id: user_id,
+        };
 
         next();
     } catch {
