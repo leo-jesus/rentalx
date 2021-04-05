@@ -1,4 +1,3 @@
-import { query } from "express";
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateCategories1616893776612 implements MigrationInterface {
