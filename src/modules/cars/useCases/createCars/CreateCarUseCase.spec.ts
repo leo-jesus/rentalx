@@ -49,15 +49,14 @@ describe("Create Car", () => {
     });
     it("should not be able to create a car with available as true by default", async () => {
         const car = await createCarUseCase.execute({
-            name: "Car 1",
+            name: "Car avalable",
             description: "description car",
             daily_rate: 100,
-            license_plate: "ABD-1234",
+            license_plate: "ABE-1234",
             fine_amount: 60,
             brand: "brand",
             category_id: "category",
         });
-        console.log(car);
         expect(car.available).toBe(true);
     });
 });
