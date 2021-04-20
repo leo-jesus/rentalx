@@ -22,7 +22,7 @@ class SendForgotPasswordMailUseCase {
     ) {}
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    async excute(email: string) {
+    async execute(email: string) {
         const user = await this.usersRepository.findByEmail(email);
         const templatePath = resolve(
             __dirname,
