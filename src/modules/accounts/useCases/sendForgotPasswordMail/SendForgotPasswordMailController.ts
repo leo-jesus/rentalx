@@ -10,7 +10,7 @@ class SendForgotPasswordMailController {
             SendForgotPasswordMailUseCase
         );
 
-        await sendForgotPasswordMailUseCase.excute(email);
+        await sendForgotPasswordMailUseCase.execute(email);
         return response.send();
     }
 }
