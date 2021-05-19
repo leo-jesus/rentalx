@@ -8,7 +8,6 @@ import {
 import { Category } from "../entities/Category";
 
 class CategoriesRepository implements ICategoryRepository {
-    private categories: Category[];
     private repository: Repository<Category>;
 
     private static INSTANCE: CategoriesRepository;
