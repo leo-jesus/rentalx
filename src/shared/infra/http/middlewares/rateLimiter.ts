@@ -5,7 +5,8 @@ import redis from "redis";
 import { AppError } from "@shared/errors/AppError";
 
 const redisClient = redis.createClient({
-    host: process.env.REDIS_HOST,
+    host:
+        process.env.NODE_ENV === "test" ? "localhost" : process.env.REDIS_HOST,
     port: Number(process.env.REDIS_PORT),
 });
 
